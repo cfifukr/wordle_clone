@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="/css/game.css"/>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Wordle</title>
+</head>
+<body>
+
+<div class="game-container">
+    <h1 class="text-center" style="color: #ff9001; font-weight: 800;">Wordle
+        <p style="font-weight: 100; font-size: small;">(From Alliexpress)</p></h1>
+    <div id="board"></div>
+    <p id="message"></p>
+</div>
+
+<div class="dropdown">
+    <button class="btn level-dropdown btn-secondary dropdown-toggle"
+            type="button"
+            id="dropdownMenuButton1"
+            data-bs-toggle="dropdown"
+            aria-expanded="false">
+        Level
+    </button>
+    <br/>
+    <button type="button" class=" mt-1 btn btn-primary level-dropdown" data-bs-toggle="modal" data-bs-target="#exampleModal">
+        Advice
+    </button>
+
+    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+        <li><a class="dropdown-item" href="?level=A1">A1</a></li>
+        <li><a class="dropdown-item" href="?level=A2">A2</a></li>
+        <li><a class="dropdown-item" href="?level=B1">B1</a></li>
+        <li><a class="dropdown-item" href="?level=B2">B2</a></li>
+        <li><a class="dropdown-item" href="?level=C1">C1</a></li>
+        <li><a class="dropdown-item" href="?level=C2">C2</a></li>
+    </ul><br>
+
+
+    
+      
+</div>
+
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel" th:text = "${advice}"></h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+      </div>
+    </div>
+  </div>
+<script>
+    var targetWord ="[[${word}]]".toUpperCase().trim();
+    console.log(targetWord);
+</script>
+
+<script src="/js/scripts.js"></script>
+</body>
+</html>
