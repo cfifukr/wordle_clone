@@ -1,0 +1,55 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #222222;
+}
+
+.text-custom{
+    color: #ff9001;
+    font-weight: 600;
+}
+
+.btn-custom{
+    background-color: #ff9001;
+    border: 1.5px solid #d37d0c;
+    width: 100%;
+
+}
+
+.dropdown-item, .dropdown-menu{
+    background-color: #ddd;
+
+}
+
+.dropdown-item:hover{
+    background-color: #787c7e;
+}
+
+input{
+    background-color: white;
+    border-radius: 0.3rem;
+    border: 1.5px solid #d37d0c;
+    color: #ff9001;
+    width: 100%;
+}
+
+.btn-custom:hover, .button-custom:focus {
+    background-color: #ff9001;
+    border: 1.5px solid #b26706;
+}
+
+.custom-select {
+    background-color: #f0f0f0;
+    color: #ff9001;
+}
+
+.form-select{
+    background-color: white;
+    width: 100%;
+}
+
+

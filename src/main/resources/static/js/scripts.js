@@ -48,8 +48,12 @@ if (typeof targetWord === 'undefined' || !targetWord) {
             }
         }
 
-        if (currentGuess === targetWord) {
+        if (currentGuess.toUpperCase().trim() === targetWord.toUpperCase().trim()) {
+
+            setTimeout(() => window.location.reload(), 3000)
             displayMessage('Congratulations! You guessed the word!');
+
+
             document.removeEventListener('keydown', handleKeyPress);
         } else if (attempts >= maxGuesses) {
             displayMessage(`Game over! The word was ${targetWord}.`);
@@ -70,6 +74,7 @@ if (typeof targetWord === 'undefined' || !targetWord) {
 
     function displayMessage(msg) {
         document.getElementById('message').textContent = msg;
+        document.getElementById('reload').set
     }
 
     function initializeBoard() {
